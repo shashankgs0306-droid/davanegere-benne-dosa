@@ -85,74 +85,56 @@ We serve delicious traditional Karnataka style dosas prepared with fresh ingredi
 <div class="cards">
 
 
-<div class="card">
+<div class="cards">
 
-<h3>🥞 Benne Dosa</h3>
+    <div class="card">
+        <h3>🥞 Benne Dosa</h3>
+        <p>Authentic Davanagere butter dosa</p>
+        <h4>₹70</h4>
+        <button class="add-cart" data-name="Benne Dosa" data-price="70">
+            Add to Cart
+        </button>
+    </div>
 
-<p>
-Authentic Davanagere butter dosa
-</p>
+    <div class="card">
+        <h3>🥞 Open Dosa</h3>
+        <p>Crispy open style dosa</p>
+        <h4>₹80</h4>
+        <button class="add-cart" data-name="Open Dosa" data-price="80">
+            Add to Cart
+        </button>
+    </div>
 
-</div>
+    <div class="card">
+        <h3>🧅 Onion Dosa</h3>
+        <p>Loaded with fresh onions</p>
+        <h4>₹90</h4>
+        <button class="add-cart" data-name="Onion Dosa" data-price="90">
+            Add to Cart
+        </button>
+    </div>
 
+    <div class="card">
+        <h3>🥔 Masala Dosa</h3>
+        <p>Classic potato masala dosa</p>
+        <h4>₹90</h4>
+        <button class="add-cart" data-name="Masala Dosa" data-price="90">
+            Add to Cart
+        </button>
+    </div>
 
-
-<div class="card">
-
-<h3>🥞 Open Dosa</h3>
-
-<p>
-Crispy open style dosa
-</p>
-
-</div>
-
-
-
-
-<div class="card">
-
-<h3>🧅 Onion Dosa</h3>
-
-<p>
-Loaded with fresh onions
-</p>
-
-</div>
-
-
-
-
-<div class="card">
-
-<h3>🥔 Masala Dosa</h3>
-
-<p>
-Classic potato masala dosa
-</p>
-
-</div>
-
-
-
-
-<div class="card">
-
-<h3>🌾 Kalli Dosa</h3>
-
-<p>
-Traditional soft dosa
-</p>
+    <div class="card">
+        <h3>🌾 Kalli Dosa</h3>
+        <p>Traditional soft dosa</p>
+        <h4>₹85</h4>
+        <button class="add-cart" data-name="Kalli Dosa" data-price="85">
+            Add to Cart
+        </button>
+    </div>
 
 </div>
-
-
-
-</div>
-
 
 </section>
-
 
 
 
@@ -214,9 +196,6 @@ Traditional soft dosa
 
 
 
-
-
-
 <section id="contact">
 
 
@@ -252,14 +231,27 @@ href="https://wa.me/919972856546">
 
 </a>
 
+<section id="cart">
 
+    <h2>Your Cart</h2>
+
+    <div id="cart-items">
+        Your cart is empty.
+    </div>
+
+    <h3>Total: ₹<span id="total">0</span></h3>
+
+    <button id="checkout">
+        Proceed to Checkout
+    </button>
+
+</section>
 
 <footer>
 
 © 2026 Davanegere Benne Dosa
 
 </footer>
-
 
 
 <script src="script.js"></script>
