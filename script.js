@@ -57,3 +57,111 @@ window.addEventListener("load",()=>{
     .style.transform="translateY(0)";
 
 });
+
+// ==========================
+// SHOPPING CART
+// ==========================
+
+let cart = [];
+
+const buttons = document.querySelectorAll(".add-cart");
+const cartItems = document.getElementById("cart-items");
+const total = document.getElementById("total");
+const checkout = document.getElementById("checkout");
+
+// Add item to cart
+buttons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const name = button.dataset.name;
+        const price = Number(button.dataset.price);
+
+        const existingItem = cart.find(item => item.name === name);
+
+        if (existingItem) {
+            existingItem.qty++;
+        } else {
+            cart.push({
+                name: name,
+                price: price,
+                qty: 1
+            });
+        }
+
+        updateCart();
+
+    });
+
+});
+
+// Update cart display
+function updateCart() {
+
+    cartItems.innerHTML = "";
+
+    if (cart.length === 0) {
+
+        cartItems.innerHTML = "<p>Your cart is empty.</p>";
+        total.innerText = "0";
+        return;
+
+    }
+
+    let totalPrice = 0;
+
+    cart.forEach(item => {
+
+        totalPrice += item.price * item.qty;
+
+        const row = document.createElement("div");
+        row.className = "cart-item";
+
+        row.innerHTML = `
+            <div>
+                <strong>${item.name}</strong><br>
+                ₹${item.price} × ${item.qty}
+            </div>
+
+            <div>
+                <button onclick="changeQty('${item.name}', -1)">−</button>
+                <button onclick="changeQty('${item.name}', 1)">+</button>
+            </div>
+        `;
+
+        cartItems.appendChild(row);
+
+    });
+
+    total.innerText = totalPrice;
+
+}
+
+// Increase / Decrease quantity
+function changeQty(name, change) {
+
+    const item = cart.find(i => i.name === name);
+
+    if (!item) return;
+
+    item.qty += change;
+
+    if (item.qty <= 0) {
+        cart = cart.filter(i => i.name !== name);
+    }
+
+    updateCart();
+
+}
+
+// Checkout button
+checkout.addEventListener("click", () => {
+
+    if (cart.length === 0) {
+        alert("Your cart is empty.");
+        return;
+    }
+
+    alert("Checkout page will be added in the next step!");
+
+});
