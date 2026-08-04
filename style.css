@@ -454,3 +454,23 @@ nav{
 .add-cart{
     ...
 }
+
+/* SEARCH BAR */
+
+.search-box{
+    max-width:500px;
+    margin:0 auto 40px;
+}
+
+.search-box input{
+    width:100%;
+    padding:15px 20px;
+    border:2px solid #d4af37;
+    border-radius:50px;
+    font-size:16px;
+    outline:none;
+}
+
+.search-box input:focus{
+    border-color:#6d1f1f;
+}
